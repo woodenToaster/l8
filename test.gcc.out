@@ -1,0 +1,151 @@
+	.section	__TEXT,__text,regular,pure_instructions
+	.globl	_main
+	.align	4, 0x90
+_main:                                  ## @main
+## BB#0:
+	pushl	%ebp
+	movl	%esp, %ebp
+	pushl	%esi
+	subl	$116, %esp
+	calll	L0$pb
+L0$pb:
+	popl	%eax
+	movl	12(%ebp), %ecx
+	movl	8(%ebp), %edx
+	leal	L_.str-L0$pb(%eax), %esi
+	movl	$0, -8(%ebp)
+	movl	%edx, -12(%ebp)
+	movl	%ecx, -16(%ebp)
+	movl	%eax, -20(%ebp)         ## 4-byte Spill
+	movl	%esi, -24(%ebp)         ## 4-byte Spill
+	calll	_tstconst
+	movl	-24(%ebp), %ecx         ## 4-byte Reload
+	movl	%ecx, (%esp)
+	movl	%eax, 4(%esp)
+	calll	_printf
+	movl	$12, %ecx
+	movl	$6, %edx
+	movl	$12, (%esp)
+	movl	$6, 4(%esp)
+	movl	%eax, -28(%ebp)         ## 4-byte Spill
+	movl	%ecx, -32(%ebp)         ## 4-byte Spill
+	movl	%edx, -36(%ebp)         ## 4-byte Spill
+	calll	_tstadd
+	movl	-20(%ebp), %ecx         ## 4-byte Reload
+	leal	L_.str1-L0$pb(%ecx), %edx
+	movl	%edx, (%esp)
+	movl	%eax, 4(%esp)
+	calll	_printf
+	movl	$12, %ecx
+	movl	$6, %edx
+	movl	$12, (%esp)
+	movl	$6, 4(%esp)
+	movl	%eax, -40(%ebp)         ## 4-byte Spill
+	movl	%ecx, -44(%ebp)         ## 4-byte Spill
+	movl	%edx, -48(%ebp)         ## 4-byte Spill
+	calll	_tstsub
+	movl	-20(%ebp), %ecx         ## 4-byte Reload
+	leal	L_.str2-L0$pb(%ecx), %edx
+	movl	%edx, (%esp)
+	movl	%eax, 4(%esp)
+	calll	_printf
+	movl	$12, %ecx
+	movl	$6, %edx
+	movl	$12, (%esp)
+	movl	$6, 4(%esp)
+	movl	%eax, -52(%ebp)         ## 4-byte Spill
+	movl	%ecx, -56(%ebp)         ## 4-byte Spill
+	movl	%edx, -60(%ebp)         ## 4-byte Spill
+	calll	_tstmul
+	movl	-20(%ebp), %ecx         ## 4-byte Reload
+	leal	L_.str3-L0$pb(%ecx), %edx
+	movl	%edx, (%esp)
+	movl	%eax, 4(%esp)
+	calll	_printf
+	movl	$12, %ecx
+	movl	$6, %edx
+	movl	$12, (%esp)
+	movl	$6, 4(%esp)
+	movl	%eax, -64(%ebp)         ## 4-byte Spill
+	movl	%ecx, -68(%ebp)         ## 4-byte Spill
+	movl	%edx, -72(%ebp)         ## 4-byte Spill
+	calll	_tstdiv
+	movl	-20(%ebp), %ecx         ## 4-byte Reload
+	leal	L_.str4-L0$pb(%ecx), %edx
+	movl	%edx, (%esp)
+	movl	%eax, 4(%esp)
+	calll	_printf
+	movl	$12, %ecx
+	movl	$5, %edx
+	movl	$12, (%esp)
+	movl	$5, 4(%esp)
+	movl	%eax, -76(%ebp)         ## 4-byte Spill
+	movl	%ecx, -80(%ebp)         ## 4-byte Spill
+	movl	%edx, -84(%ebp)         ## 4-byte Spill
+	calll	_tstmod
+	movl	-20(%ebp), %ecx         ## 4-byte Reload
+	leal	L_.str5-L0$pb(%ecx), %edx
+	movl	%edx, (%esp)
+	movl	%eax, 4(%esp)
+	calll	_printf
+	movl	$12, %ecx
+	movl	$1, %edx
+	movl	$12, (%esp)
+	movl	$1, 4(%esp)
+	movl	%eax, -88(%ebp)         ## 4-byte Spill
+	movl	%ecx, -92(%ebp)         ## 4-byte Spill
+	movl	%edx, -96(%ebp)         ## 4-byte Spill
+	calll	_tstshl
+	movl	-20(%ebp), %ecx         ## 4-byte Reload
+	leal	L_.str6-L0$pb(%ecx), %edx
+	movl	%edx, (%esp)
+	movl	%eax, 4(%esp)
+	calll	_printf
+	movl	$12, %ecx
+	movl	$1, %edx
+	movl	$12, (%esp)
+	movl	$1, 4(%esp)
+	movl	%eax, -100(%ebp)        ## 4-byte Spill
+	movl	%ecx, -104(%ebp)        ## 4-byte Spill
+	movl	%edx, -108(%ebp)        ## 4-byte Spill
+	calll	_tstshr
+	movl	-20(%ebp), %ecx         ## 4-byte Reload
+	leal	L_.str7-L0$pb(%ecx), %edx
+	movl	%edx, (%esp)
+	movl	%eax, 4(%esp)
+	calll	_printf
+	movl	$0, %ecx
+	movl	%eax, -112(%ebp)        ## 4-byte Spill
+	movl	%ecx, %eax
+	addl	$116, %esp
+	popl	%esi
+	popl	%ebp
+	retl
+
+	.section	__TEXT,__cstring,cstring_literals
+L_.str:                                 ## @.str
+	.asciz	"10 = %d\n"
+
+L_.str1:                                ## @.str1
+	.asciz	"12 + 6 = %d\n"
+
+L_.str2:                                ## @.str2
+	.asciz	"12 - 6 = %d\n"
+
+L_.str3:                                ## @.str3
+	.asciz	"12 * 6 = %d\n"
+
+L_.str4:                                ## @.str4
+	.asciz	"12 / 6 = %d\n"
+
+L_.str5:                                ## @.str5
+	.asciz	"12 %% 5 = %d\n"
+
+L_.str6:                                ## @.str6
+	.asciz	"12 << 1 = %d\n"
+
+L_.str7:                                ## @.str7
+	.asciz	"12 >> 1 = %d\n"
+
+
+.subsections_via_symbols

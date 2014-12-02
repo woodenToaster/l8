@@ -311,7 +311,9 @@ binop   : ID IEQ ID     {
                           printf( "    movl       $1, %%eax\n" );
                           printf( "    end6:\n" );
                         }
-        | ID IASSIGN ID { }
+        | ID IASSIGN ID {
+                          
+                        }
         | ID IAND ID    { }
         | ID IOR ID     { }
         | ID IXOR ID    { }

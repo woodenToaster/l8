@@ -66,6 +66,14 @@ t3 := t1 <i t2
 reti t3
 fend
 
+func tstassignglob
+formal 4
+alloc x 4
+bgnstmt 1
+t1 := param 1
+t3 := global x
+t4 := t3 =i t1
+
 func tstconst
 bgnstmt 1
 t1 := 10
